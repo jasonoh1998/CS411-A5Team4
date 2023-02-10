@@ -1,3 +1,9 @@
 # CS411-A5 Team4 Project
+## Requirements
+Oauth
+2 APIS
+DATABASE
+FRONT END
+BACK END
 ## Member
-Cheolmin Oh jasonoh@bu.edu
+Cheolmin Oh (email: jasonoh@bu.edu)
