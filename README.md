@@ -7,3 +7,4 @@ FRONT END
 BACK END
 ## Member
 Cheolmin Oh (email: jasonoh@bu.edu)
+Cheng Lin (email: chengl@bu.edu)
