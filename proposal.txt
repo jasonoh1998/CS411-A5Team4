@@ -1,3 +1,0 @@
-database > store user info from loggin/oauth + api database
-api > weather api + ???
-OAuth > google oauth
