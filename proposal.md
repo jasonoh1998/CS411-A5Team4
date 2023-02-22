@@ -1,15 +1,29 @@
-database > store user info from loggin/oauth + api database
-api > weather api + ???
-OAuth > google oauth
+# Proposal Requirements
+1 Oauth <br>
+2 API <br>
+Database <br>
+Front/Back-end <br>
 
-idea1)
-use genius api to get
+# Project Ideas
 
-idea2)
-make chatbot using openapi
+## Spotify Liked Songs Lyric Generator
+- Use Genius API to create lyrics for liked spotify songs
+- Use Spotify API to send my liked songs to find the lyrics
+- Fun Translation API tp give options to change the lyrics to the language you want
+- Log-in with Google
+- Store data on MySQL
+- React/Flask could be used
+- Extra features if we have time
+    - Use OpenAPI to explain the lyrics
+    - Use OpenAPI to give other song recommendations that has similar vibe
 
-idea3)
-fun translation api to make translation website
-
-idea4)
-make a poker/blackjack website using card deck
+## Online Casino
+- Use Deck of Cards API to create poker/black jack games
+- Use Exchange Rates API to make user bet money on games in their currency
+- Log-in with Google
+- Store data on MySQL
+- React/Flask could be used
+- Extra features if we have time
+    - Use OpenAPI to interact with user
+        - Give recommendation what move to take next, etc.
+    - Let multiple user play game in real time
