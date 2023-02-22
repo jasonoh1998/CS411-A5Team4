@@ -1,7 +1,7 @@
 # CS411-A5 Team4 Project
 ## Requirements
 Oauth : google <br>
-2+ APIS : weather api<br>
+2+ APIS : <br>
 DATABASE : MySql 8.0.30<br>
 FRONT END : React 18.2.0<br>
 * react-router-dom
