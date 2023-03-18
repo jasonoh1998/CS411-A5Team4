@@ -9,7 +9,7 @@ Front/Back-end <br>
 ## Spotify Liked Songs Lyric Generator
 - Use Genius API to create lyrics for liked spotify songs
 - Use Spotify API to send my liked songs to find the lyrics
-- Fun Translation API tp give options to change the lyrics to the language you want
+- Fun Translation API to give options to change the lyrics to the language you want
 - Log-in with Google
 - Store data on MySQL
 - React/Flask could be used
