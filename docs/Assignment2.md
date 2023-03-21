@@ -116,3 +116,24 @@ However, the language used on analysis has to be kind to not offend people.
 - The user tries to share a song or lyric, but the sharing feature is unavailable due to technical difficulties or maintenance
 
 This feature is important because it allows users to share their favorite music and lyrics with their friends, and helps to discover new music through social networks.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## User Story 6
+"As a user I want to be able to get an explanation of what the lyrics mean."
+
+### Happy Path:
+- User opens the Spotify lyric generator application
+- User generates lyrics using our web app
+- User can press button that generates an analysis of the lyrics using Genius API
+- Analysis appears on seperate page
+
+### Unhappy Path:
+- When the user tries to generate an analysis, but the feature incorrectly identifies the lyrics/song.
+- The feature generates an analysis that is not accurate to the song/lyrics inputed.
+- The Genius API has a limited selection of songs with lyrical explanations.
+- Web app displays an error message to the user.
+
+This feature is important because it allows the user to break down the meaning behind the lyrics in existing songs, as well as analyzes original generated lyrics and gives an analysis on the meaning behind them.
