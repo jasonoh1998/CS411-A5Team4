@@ -10,3 +10,4 @@ BACK END : Flask <br>
 ## Member
 Cheolmin Oh (email: jasonoh@bu.edu) <br>
 Cheng Lin (email: chengl@bu.edu)
+Nolan Turi (email: nturi@bu.edu)
