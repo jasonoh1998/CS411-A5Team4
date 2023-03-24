@@ -63,7 +63,7 @@ This feature is important because users may want to translate their lyrics into 
 "As a user, I want to be able to personalize the generated lyrics based on my own inputs."
 
 ### Happy Path:
-- User opens the Spotify lyric generator application
+- User opens the lyric generator application
 - User inputs the keywords or phrases they would like to be included in the lyrics then save it
 - User can edit or customize the lyrics and access them (same storage as User Story 2)
 - This saved lyrics will be displayed on a seperate tab distinct from the main page
@@ -84,7 +84,7 @@ This feature is important because it allows users to create personalized lyrics 
 "As a user, I want to be able to rate the generated lyrics and songs."
 
 ### Happy Path:
-- User opens the Spotify lyric generator application
+- User opens the lyric generator application
 - Application displays a list of recently generated lyrics and songs
 - User can choose analyze drop down menu and press generate
 - The rate of the lyrics out of a scale of 1 to 5 stars are given with analysis
@@ -105,7 +105,7 @@ However, the language used on analysis has to be kind to not offend people.
 "As a user, I want to be able to share my favorite lyrics and songs with my friends."
 
 ### Happy Path:
-- User opens the Spotify lyric generator application
+- User opens the lyric generator application
 - User goes to their favorite song tab or saved song/lyrics tab
 - Application generates lyrics to the song and displays them on the screen
 - User can press button that gives option to copy or share the lyrics
@@ -125,7 +125,7 @@ This feature is important because it allows users to share their favorite music 
 "As a user I want to be able to get an explanation of what the lyrics mean."
 
 ### Happy Path:
-- User opens the Spotify lyric generator application
+- User opens the lyric generator application
 - User generates lyrics using our web app
 - User can press button that generates an analysis of the lyrics using Genius API
 - Analysis appears on seperate page
