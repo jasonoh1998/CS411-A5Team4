@@ -9,5 +9,5 @@ FRONT END : React 18.2.0<br>
 BACK END : Flask <br>
 ## Member
 Cheolmin Oh (email: jasonoh@bu.edu) <br>
-Cheng Lin (email: chengl@bu.edu)
+Cheng Lin (email: chengl@bu.edu) <br>
 Nolan Turi (email: nturi@bu.edu)
