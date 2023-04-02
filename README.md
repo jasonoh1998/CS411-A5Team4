@@ -1,4 +1,8 @@
 # CS411-A5 Team4 Project
+<p align="center">
+  <img src="https://github.com/jasonoh1998/CS411-A5Team4/blob/main/pic.png" />
+</p>
+
 ## Requirements
 Oauth2 : Discord <br>
 2+ APIS : OpenAI, Genius API <br>
