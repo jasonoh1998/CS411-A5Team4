@@ -6,16 +6,14 @@ Front/Back-end <br>
 
 # Project Ideas
 
-## Spotify Liked Songs Lyric Generator
+## Songs Lyric Generator with OpenAI
 - Use Genius API to create lyrics for liked spotify songs
-- Use Spotify API to send my liked songs to find the lyrics
 - Fun Translation API to give options to change the lyrics to the language you want
-- Log-in with Google
+- Log-in with Discord
 - Store data on MySQL
 - React/Flask could be used
-- Extra features if we have time
-    - Use OpenAPI to explain the lyrics
-    - Use OpenAPI to give other song recommendations that has similar vibe
+- Use OpenAPI to explain the lyrics
+- Use OpenAPI to give other song recommendations that has similar vibe
 
 ## Online Casino
 - Use Deck of Cards API to create poker/black jack games
