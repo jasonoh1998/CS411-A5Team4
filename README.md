@@ -3,6 +3,9 @@
   <img src="https://github.com/jasonoh1998/CS411-A5Team4/blob/main/pic.png" />
 </p>
 
+## Prototype Demo
+![LyricLab-prototype](https://user-images.githubusercontent.com/92873161/230682592-e80e8fcf-8ae3-402a-adf5-c49e436b67cc.gif)
+
 ## Requirements
 Oauth2 : Discord <br>
 2+ APIS : OpenAI, Genius API <br>
