@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { signIn, signOut, useSession } from "next-auth/react";
+import React, { useEffect, useState } from "react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from 'next/router';
 
 const Navbar: React.FC<{ setResult: (result: any[]) => void }> = ({ setResult }) => {
@@ -31,6 +31,12 @@ const Navbar: React.FC<{ setResult: (result: any[]) => void }> = ({ setResult })
         }
     }
 
+    useEffect(() => {
+        if (!sessionData) {
+            router.push("/");
+        }
+    }, [sessionData, router]);
+
     const navigateToMySongs = () => {
         router.push("/mySongs");
     };
@@ -51,22 +57,20 @@ const Navbar: React.FC<{ setResult: (result: any[]) => void }> = ({ setResult })
             />
             </div>
         </form>
-        {sessionData && (
-            <div style={{ display: "flex", flexWrap: "nowrap" }}>
-            <button
-                className="rounded-full bg-green-500 hover:bg-black mx-1 px-4 py-2 font-semibold text-white no-underline transition duration-300"
-                onClick={navigateToMySongs}
-            >
-                My Songs
-            </button>
-            <button
-                className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-                onClick={sessionData ? () => void signOut() : () => void signIn()}
-            >
-                Sign out
-            </button>
-            </div>
-        )}
+        <div style={{ display: "flex", flexWrap: "nowrap" }}>
+        <button
+            className="rounded-full bg-green-500 hover:bg-black mx-1 px-4 py-2 font-semibold text-white no-underline transition duration-300"
+            onClick={navigateToMySongs}
+        >
+            My Songs
+        </button>
+        <button
+            className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
+            onClick={() => void signOut()}
+        >
+            Sign out
+        </button>
+        </div>
         </nav>
     );
 };

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSession, signOut, signIn } from "next-auth/react";
+import React, { useEffect, useState } from 'react';
+import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { api } from "~/utils/api";
 
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
             {sessionData && (
                 <button
                     className="rounded-full bg-white/10 px-10 py-3 font-semibold text-white no-underline transition hover:bg-white/20"
-                    onClick={sessionData ? () => void signOut() : () => void signIn()}
+                    onClick={() => {void signOut(); window.location.href = "/";}}
                 >
                     Sign out
                 </button>
