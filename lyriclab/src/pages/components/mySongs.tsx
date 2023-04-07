@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSession, signOut, signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import { api } from "~/utils/api";
@@ -38,59 +38,133 @@ const MySongs: React.FC = () => {
         enabled: sessionData?.user !== undefined,
     });
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedSong, setSelectedSong] = useState<any>(null);
-    const handleSongClick = (song: any) => {
+    const [selectedSong, setSelectedSong] = useState(null);
+    const handleSongClick = (song) => {
         setSelectedSong(song);
+        setEditedLyrics(song.lyrics);
         setIsModalOpen(true);
     };
+
+    const [editedLyrics, setEditedLyrics] = useState("");
+    const [isEditing, setIsEditing] = useState(false);
+
+    const editSong = async () => {
+        try {
+            const userEmail = sessionData?.user?.email;
+            const userName = sessionData?.user?.name;
+
+            const response = await fetch("/api/editSong", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userName: userName,
+                    userEmail,
+                    artist: selectedSong.artist,
+                    song: selectedSong.song,
+                    lyrics: editedLyrics,
+                }),
+            });
+        
+            const data = await response.json();
+            console.log("Song edited:", data);
+
+            // Close the modal
+            setIsModalOpen(false);
+            setSelectedSong(null);
+            setEditedLyrics("");
+            setIsEditing(false);
+            // Reload the page
+            location.reload();
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
+    const deleteSong = async () => {
+        try {
+            const userEmail = sessionData?.user?.email;
+
+            const response = await fetch("/api/deleteSong", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userEmail,
+                    artist: selectedSong.artist,
+                    song: selectedSong.song,
+                }),
+            });
+            
+            const data = await response.json();
+            console.log('Song deleted:', data);
+            // Close the modal
+            setIsModalOpen(false);
+            setSelectedSong(null);
+            // Reload the page
+            location.reload();
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
   
     return (
         <>
-          <Navbar />
-          <div className="container mx-auto mt-20 px-4 py-8 w-full md:w-3/4">
-            {sessionData && (
-                <h1 className="text-3xl font-bold mb-10 text-center">
-                {sessionData.user?.name}'s Songs
-                </h1>
-            )}
-            {mySongs && (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {mySongs.map((song, index) => (
-                        <div key={index} className="mb-6">
-                        <button
-                            className="text-2xl font-bold text-left focus:outline-none py-2 px-4 rounded-lg border-2 border-green-700 bg-white hover:bg-green-600 hover:shadow-md transition-all duration-200 w-full"
-                            onClick={() => handleSongClick(song)}
-                        >
-                            {song.artist} - {song.song}
-                        </button>
-                        </div>
-                    ))}
-                </div>
+            <Navbar />
+            <div className="container mx-auto mt-20 px-4 py-8 w-full md:w-3/4">
+                {sessionData && (
+                    <h1 className="text-3xl font-bold mb-10 text-center">
+                    {sessionData.user?.name}'s Songs
+                    </h1>
                 )}
-            </div>
-            {isModalOpen && (
-              <div className="fixed inset-0 z-10 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gray-900 opacity-100">
-                  <div className="flex justify-end">
-                    <button
-                      onClick={() => setIsModalOpen(false)}
-                      className="bg-gray-200 px-4 py-2 rounded-lg mt-4 mb-4 mr-3 ml-3"
-                    >
-                      Close
-                    </button>
-                  </div>
-                  <div className="bg-white p-4 rounded-md overflow-y-auto max-h-[90vh] pr-4">
-                    <div className="text-center">
-                      <h2 className="text-lg font-medium mb-4">
-                        {selectedSong.artist} - {selectedSong.song}
-                      </h2>
-                      <pre className="whitespace-pre-wrap">
-                        {selectedSong.lyrics}
-                      </pre>
+                {mySongs && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {mySongs.map((song, index) => (
+                            <div key={index} className="mb-6">
+                            <button
+                                className="text-2xl font-bold text-left focus:outline-none py-2 px-4 rounded-lg border-2 border-green-700 bg-white hover:bg-green-600 hover:shadow-md transition-all duration-200 w-full"
+                                onClick={() => handleSongClick(song)}
+                            >
+                                {song.artist} - {song.song}
+                            </button>
+                            </div>
+                        ))}
                     </div>
-                  </div>
+                    )}
                 </div>
-              </div>
+                {isModalOpen && (
+                <div className="fixed inset-0 z-10 flex items-center justify-center">
+                <div className="absolute inset-0 bg-gray-900 opacity-100">
+                    <div className="flex justify-end">
+                        {isEditing ? (
+                            <button onClick={editSong} className="bg-green-700 text-white px-4 py-2 rounded-lg mt-4 mb-4 mr-3 ml-3">Save</button>
+                        ) : (
+                            <button onClick={() => setIsEditing(true)} className="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 mb-4 mr-3 ml-3">Edit</button>
+                        )}
+                        <button onClick={deleteSong} className="bg-red-500 text-white px-4 py-2 rounded-lg mt-4 mb-4 mr-3 ml-3">Delete</button>
+                        <button onClick={() => {setIsModalOpen(false); setIsEditing(false);}} className="bg-gray-200 px-4 py-2 rounded-lg mt-4 mb-4 mr-3 ml-3">Close</button>
+                    </div>
+                    <div className="bg-white p-4 rounded-md overflow-y-auto max-h-[90vh] pr-4">
+                    <div className="text-center">
+                        <h2 className="text-lg font-medium mb-4">
+                            {selectedSong.artist} - {selectedSong.song}
+                        </h2>
+                        {isEditing ? (
+                            <textarea
+                                className="w-full h-64 p-2 border border-gray-300 rounded-md"
+                                value={editedLyrics}
+                                onChange={(e) => setEditedLyrics(e.target.value)}
+                            />
+                        ) : (
+                            <pre className="whitespace-pre-wrap">{selectedSong.lyrics}</pre>
+                        )}
+                    </div>
+                    </div>
+                </div>
+                </div>
             )}
         </>
     );

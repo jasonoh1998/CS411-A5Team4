@@ -61,6 +61,9 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  session: {
+    maxAge: 60*60 // 1hr session time
+  },
 };
 
 /**
