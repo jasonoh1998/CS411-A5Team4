@@ -1,4 +1,4 @@
-## Cheolmin Oh's Work Breakdown User Story 2
+## Cheolmin Oh's Work Breakdown of User Story 2
 "As a user, I want to be able to translate the generated lyrics into different languages."
 1. Add language selection drop-down menu to the web app interface
 2. Set up translation API service for the selected language
