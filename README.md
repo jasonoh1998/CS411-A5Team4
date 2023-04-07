@@ -31,4 +31,4 @@ Nolan Turi (email: nturi@bu.edu)
 - [x] Basic project that full fills all requirements
 - [ ] Shorter session time for the user (Could switch to JWT)
 - [ ] Delete button to delete saved songs
-- [ ] No duplicated songs when artist and song name are the same
+- [x] No duplicated songs when artist and song name are the same
