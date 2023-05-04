@@ -10,7 +10,7 @@
 8. Add a "generate" button to trigger the translation process
 9. Implement error handling for cases where the selected language is not supported
 10. Implement error handling for cases where the translation API returns an error
-
+^
 ## Hours Estimate Table
 
 | Steps | Hours |
