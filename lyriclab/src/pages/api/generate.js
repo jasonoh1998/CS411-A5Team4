@@ -1,3 +1,4 @@
+// this is slight modification of given OpenAI API file to make calls
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({

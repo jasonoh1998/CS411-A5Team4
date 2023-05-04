@@ -3,6 +3,9 @@ import prisma from '../../../lib/prisma';
 
 let isSaving = false; // prevents fast click save
 
+// This save api call from the main page
+// It prevents duplicate by checking if the song exist in the database
+
 export default async function saveSong(req: NextApiRequest, res: NextApiResponse) {
     const { userEmail, artist, song, lyrics } = req.body;
 

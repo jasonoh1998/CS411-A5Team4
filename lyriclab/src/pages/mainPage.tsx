@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from 'next/router';
 
+// this is the homepage that you will only see with the session
+
 const Navbar: React.FC<{ setResult: (result: any[]) => void }> = ({ setResult }) => {
     const { data: sessionData } = useSession();
     const [codeInput, setCodeInput] = useState("");

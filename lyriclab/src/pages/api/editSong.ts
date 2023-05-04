@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../lib/prisma';
 
+// this is the API call to edit selected song from your account
 export default async function editSong(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const { userName, userEmail, artist, song, lyrics } = req.body;

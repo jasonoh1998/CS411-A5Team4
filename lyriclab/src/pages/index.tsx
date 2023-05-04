@@ -3,6 +3,8 @@ import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
 import MainPage from "~/pages/mainPage";
 
+// this is the login page
+
 const Home: NextPage = () => {
     const { data: sessionData } = useSession();
 

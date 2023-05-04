@@ -3,6 +3,9 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { api } from "~/utils/api";
 
+// This is my songs page where you can access from the main page.
+// This part uses routers to get user's saved songs.
+// Then you can either delete or edit the songs from the database.
 
 const Navbar: React.FC = () => {
     const { data: sessionData } = useSession();

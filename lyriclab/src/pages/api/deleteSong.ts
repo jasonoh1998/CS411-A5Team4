@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '../../../lib/prisma';
 
+// this is the API call to delte song from your account
 export default async function deleteSong(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
 		const { userEmail, artist, song } = req.body;
