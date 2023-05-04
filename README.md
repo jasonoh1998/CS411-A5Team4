@@ -5,7 +5,7 @@
 
 ## Prototype Demo
 ![LyricLab-prototype](https://user-images.githubusercontent.com/92873161/230682592-e80e8fcf-8ae3-402a-adf5-c49e436b67cc.gif)
-Full Version Link: https://drive.google.com/file/d/1XAmOj3ASG77sbh-T_nm3bOHx4qsaGDUM/view?usp=share_link
+Full Version Link: https://drive.google.com/file/d/1Qvfbk8auD-9TJWt9g4mjmSFap4JTM7uN/view?usp=share_link
 
 ## Requirements
 Oauth2 : Discord <br>
